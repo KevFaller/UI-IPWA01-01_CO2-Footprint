@@ -1,0 +1,64 @@
+*{ /*gilt fuer alle Elemente*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif; /*Standart Schrifftart*/
+    background-color: #f1f1f1;
+    font-size: 16px; /*Standart Schrifftgroese*/
+    position: relative;
+    padding-bottom: 20px;
+    min-height: 100vh;
+}
+
+
+header{
+    display: flex; /*danach war alles nebeneinander*/
+    text-align: center;
+    justify-content: space-between; /*alles schoen getrennt voneinander*/
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #333;
+    color:  #009919;
+}
+li, a{
+    font-family: Arial, Helvetica, sans-serif; /*Standart Schrifftart*/
+    font-size: 16px;
+    font-weight: 500;
+    color:  #009919;
+    text-decoration: none;
+}
+
+.nav_links li{
+    display: inline-block; /* sind nichrt mehr untereinander sonder nebeneinander*/
+    padding: 0px 20px;
+}
+
+main{
+    width: 90vw;
+    margin: 0 auto;
+    padding: 30px 20px; /* 30px von rechts und links weg und 20px von oben und unten*/
+    /*min-height: calc(75vh);*/
+}
+
+article{
+    background-color: azure;
+    padding: 20px; /*wie weit es vom Rand weg ist*/
+    margin-bottom: 20px; /*20px vom unteren objekt weg*/
+    border-radius: 5px;
+}
+
+
+footer{
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #333;
+    color:  #009919;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
