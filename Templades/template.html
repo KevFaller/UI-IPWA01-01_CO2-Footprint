@@ -10,24 +10,25 @@
         <div class="container">
           <div class="navbar">
             <img class="logo" src="/Images/Logo-Lili-removebg-preview.png" alt="Logo von CO2 Footprint">
-            <input type="checkbox" id="toggle_button">
-            <lable for="toggle_button" class="toggle_button">
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </lable>
+            
             <h1>Ich bin eine Ueberschrifft</h1>
             <nav>
-                <a class="menu-logo" href="/Images/Logo-Lili-removebg-preview.png">meinLogo</a>
                 <ul>
-                  <li><a href="#">Menu</a>
+                  <li class="expandable_li">
+                    <input type="checkbox" id="products_checkbox">
+                    <label for="products_checkbox">Menu-1</label>
+                    <ul class="dropdown">
+                      <li><a href="#">AAAA</a></li>
+                      <li><a href="#">BBBB</a></li>
+                      <li><a href="#">CCCC</a></li>
+                    </ul>
                     <li class="expandable_li">
                           <input type="checkbox" id="products_checkbox">
-                          <label for="products_checkbox">Products</label>
+                          <label for="products_checkbox">Menu-2</label>
                           <ul class="dropdown">
                             <li><a href="#">AAAA</a></li>
                             <li><a href="#">BBBB</a></li>
                             <li><a href="#">CCCC</a></li>
-
                           </ul>
                     </li>
                 </ul>
