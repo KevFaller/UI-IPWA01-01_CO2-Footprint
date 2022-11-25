@@ -12,10 +12,10 @@ html{
     width: 100%;
     min-height: 10vh;
     box-sizing: border-box;
-    overflow: hidden;
     background-color: #24262b;
     padding: 40px 0;
     color: #bbbbbb;
+    align-items: center;
 
     /*Erstellt den Ramen der class container*/
     border-color: #000;
@@ -35,22 +35,159 @@ html{
     cursor: pointer;
     margin: 30px;
 }
+/*
 .menu-icon{
     width: 25px;
     cursor: pointer;
 }
+*/
 nav{
-    flex: 1;
-    text-align: right;
+    height: 80px;
+    background-color: #243848;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
 }
 nav ul{
-    float: right;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
 }
+nav li{
+    height: 100%;
+    width: 90px;
+    text-align: center;
+    position: relative;
+}
+nav li:hover{
+    background-color: #314453;
+    color: #ffffff;
+    border-radius: 12px;
+}
+nav ul a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.dropdown{
+    height: min-content;
+    width: 90px;
+    background-color: #243848;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 80px;
+}
+.dropdown li{
+    height: 70px;
+    width: 100%;
+}
+.dropdown li a{
+    justify-content: flex-start;
+    padding-left: 30px;
+    width: calc(100% -30px);
+}
+nav li:hover .dropdown{
+    display: flex;
+}
+nav input[type="checkbox"]{
+    display: none;
+}
+.expandable_li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*
+.toggle_button{
+    width: 30px;
+    height: 23px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bar{
+    height: 4px;
+    width: 100%;
+    background: #e91e63;
+    border-radius: 100px;
+}
+*/
+
+/*
+@media(max-width: 800px){
+    .toggle_button{
+        display: flex;
+    }
+    nav ul{
+        height: max-content;
+        width: 100%;
+        background-color: green;
+        display: none;
+        position: absolute;
+        top: 80px;
+    }
+    nav li{
+        height: min-content;
+        width: 100%;
+    }
+    nav ul a{
+        padding: 30px 0;
+    }
+    .expandable_li{
+        display: block;
+    }
+    .expandable_li label{
+        padding: 30px 0;
+        cursor: pointer;
+        display: block;
+    }
+    .expandable_li:hover .dropdown{
+        display: none;
+    }
+    .expandable_li input[type="checkbox"]:checked ~.dropdown{
+        display: block;
+    }
+        .dropdown{
+            position: static;
+            width:100%;
+        }
+        .dropdown li{
+            padding: 0;
+            display: block;
+            position: static;
+            background-color: lightcoral;
+        }
+        .dropdown li a{
+            width: 100%;
+            padding: 0;
+            justify-content: center;
+        }
+        #toggle_button:checked ~ ul{
+            display: block;
+        }
+    
+}
+*/
+
+
 nav ul li{
     list-style: none;
     float: left;
     position: relative;
 }
+
 nav ul li a{
     text-decoration: none;
     color: #bbbbbb;
@@ -58,6 +195,7 @@ nav ul li a{
     padding: 28px;
     display: block;
 }
+/*
 nav ul li a:hover{
     color: #ffffff;
 }
@@ -70,6 +208,7 @@ nav ul li ul{
 nav ul li:hover ul{
     display: block;
 }
+*/
 nav ul li ul li a{
     font-size: 16px;
     text-transform: capitalize;
@@ -84,10 +223,13 @@ nav ul li ul li a:hover{
     padding-left: 10px;
 }
 
+
+
 /* Content bereich*/
 body{
-    background-color: yellowgreen;
+    background-color: #bbbbbb;
     margin:  auto;
+    
     /*Sticky - foot*/
     display: flex; 
     flex-direction: column;
@@ -101,7 +243,7 @@ main{
 }
 
 article{
-    background-color:brown;
+    background-color:#696969;
     padding: 20px; /*wie weit es vom Rand weg ist*/
     margin-bottom: 20px; /*20px vom unteren objekt weg*/
     border-radius: 7px;
