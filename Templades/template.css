@@ -223,10 +223,13 @@ nav ul li ul li a:hover{
     padding-left: 10px;
 }
 
+
+
 /* Content bereich*/
 body{
-    background-color: yellowgreen;
+    background-color: #bbbbbb;
     margin:  auto;
+    
     /*Sticky - foot*/
     display: flex; 
     flex-direction: column;
@@ -240,7 +243,7 @@ main{
 }
 
 article{
-    background-color:brown;
+    background-color:#696969;
     padding: 20px; /*wie weit es vom Rand weg ist*/
     margin-bottom: 20px; /*20px vom unteren objekt weg*/
     border-radius: 7px;
