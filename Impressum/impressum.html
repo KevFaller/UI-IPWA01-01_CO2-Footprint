@@ -24,10 +24,10 @@
                     </ul>
                     <li class="expandable_li">
                           <input type="checkbox" id="products_checkbox">
-                          <label for="products_checkbox">Menu-2</label>
+                          <label for="products_checkbox">RTL/LTR</label>
                           <ul class="dropdown">
-                            <li><a href="#">AAAA</a></li>
-                            <li><a href="#">BBBB</a></li>
+                            <li><a href="#"onclick="toggleRTL()">RTL</a></li>
+                            <li><a href="#"onclick="toggleLTR()">LTR</a></li>
                             <li><a href="#">CCCC</a></li>
                           </ul>
                     </li>
@@ -62,7 +62,15 @@
               Quelle: <a href="https://www.e-recht24.de">eRecht24</a>
             </p>
         </article>
-        
+        <script>
+          function toggleRTL() {
+            document.documentElement.dir = 'rtl'; // Setze die Ausrichtung auf RTL
+          }
+  
+          function toggleLTR() {
+            document.documentElement.dir = 'ltr'; // Setze die Ausrichtung auf LTR
+          }
+        </script>
 
     </main>
 
