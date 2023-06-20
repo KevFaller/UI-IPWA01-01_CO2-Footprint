@@ -19,8 +19,8 @@
                     <label for="products_checkbox">Menu-1</label>
                     <ul class="dropdown">
                       <li><a href="index.html">Startseite</a></li>
-                      <li><a href="#">BBBB</a></li>
-                      <li><a href="#">CCCC</a></li>
+                      <li><a href="#"onclick="toggleRTL()">RTL</a></li>
+                      <li><a href="#"onclick="toggleLTR()">LTR</a></li>
                     </ul>
                     <li class="expandable_li">
                           <input type="checkbox" id="products_checkbox">
@@ -66,6 +66,15 @@
           </div>
     
           <script src="skript.js"></script>
+          <script>
+            function toggleRTL() {
+              document.documentElement.dir = 'rtl'; // Setze die Ausrichtung auf RTL
+            }
+    
+            function toggleLTR() {
+              document.documentElement.dir = 'ltr'; // Setze die Ausrichtung auf LTR
+            }
+          </script>
             
         </article>
         
