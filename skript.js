@@ -88,19 +88,11 @@ showtable(array);
 //table filtered data array
 var newarray=[];
 
-//for searching method
-document.getElementById("search").addEventListener('keyup', function(){
-
+document.getElementById("search").addEventListener('keyup', function() {
     var search = this.value.toLowerCase();
+    newarray = array.filter(function(val) {
+        return val.land.toLowerCase().includes(search) || val.name.toLowerCase().includes(search);
+    });
 
-    newarray = array.filter(function (val){
-
-        if(val.id.includes(search) || val.name.includes(search) || val.land.includes(search) || val.co2.includes(search)){
-            var newobj = {id: val.id , name: val.name , land: val.land , co2: val.co2};
-            return newobj;
-        }
-        
-    })
-
-    showtable(newarray);    
-})
+    showtable(newarray);
+});
