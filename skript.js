@@ -48,51 +48,59 @@ var array = [
         land:"Schweiz",
         co2:"8763",
     }
-]
+];
 
-
-// show table data
-
-function showtable(curarray){
-    document.getElementById("mytable").innerHTML =`
+// Zeigt die Tabellendaten an
+function showTable(curArray) {
+    var tableContent = `
         <tr class="bg-primary test-white fw-bold">
-        <td>ID</td>
-        <td>Name</td>
-        <td>Land</td>
-        <td>co2</td>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Land</td>
+            <td>CO2</td>
+        </tr>
     `;
-    //for checking arry is empty
-    if(curarray==""){
-        document.getElementById("error").innerHTML = `<span class="text-danger">Not Fount!!</span>`
-    }
-    else{
-        document.getElementById("error").innerHTML = "";
+    var tableElement = document.getElementById("mytable");
+    var errorElement = document.getElementById("error");
 
-        for(var i = 0; i < curarray.length; i++){
-            document.getElementById("mytable").innerHTML += `
+    if (curArray.length === 0) {
+        errorElement.innerHTML = `<span class="text-danger">Not Found!!</span>`;
+    } else {
+        errorElement.innerHTML = "";
+
+        for (var i = 0; i < curArray.length; i++) {
+            tableContent += `
                 <tr>
-                    <td>${curarray[i].id}</td>
-                    <td>${curarray[i].name}</td>
-                    <td>${curarray[i].land}</td>
-                    <td>${curarray[i].co2}</td>
+                    <td>${sanitizeInput(curArray[i].id)}</td>
+                    <td>${sanitizeInput(curArray[i].name)}</td>
+                    <td>${sanitizeInput(curArray[i].land)}</td>
+                    <td>${sanitizeInput(curArray[i].co2)}</td>
                 </tr>
-            `
-        
+            `;
         }
     }
+
+    tableElement.innerHTML = tableContent;
 }
 
-//calling show table data method
-showtable(array);
+// Aufruf der Funktion zur Anzeige der Tabelle mit den Ursprungsdaten
+showTable(array);
 
-//table filtered data array
-var newarray=[];
+// Gefilterte Datensätze in einem neuen Array
+var newArray = [];
 
-document.getElementById("search").addEventListener('keyup', function() {
-    var search = this.value.toLowerCase();
-    newarray = array.filter(function(val) {
+document.getElementById("search").addEventListener("keyup", function() {
+    var search = sanitizeInput(this.value.toLowerCase());
+    newArray = array.filter(function(val) {
         return val.land.toLowerCase().includes(search) || val.name.toLowerCase().includes(search);
     });
 
-    showtable(newarray);
+    showTable(newArray);
 });
+
+// Funktion zur Säuberung der Benutzereingaben von potenziell schädlichem Code
+function sanitizeInput(input) {
+    var tempElement = document.createElement("div");
+    tempElement.textContent = input;
+    return tempElement.innerHTML;
+}
